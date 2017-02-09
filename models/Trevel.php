@@ -15,7 +15,7 @@ class Trevel extends ActiveRecord {
     public function getComment(){
         return $this->hasMany(Comment::className(), ['comment_id' => 'id']);
     }
-//    Добавление количества комментариев при статусе 1
+//    Добавление количества комментариев при статусе (1 - выводит, 0 - не выводит)
     public function getPublicomment()
     {
         return  $this->getComment()->where(['toadd' => 1]);
