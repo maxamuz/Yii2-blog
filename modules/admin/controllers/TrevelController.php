@@ -36,7 +36,7 @@ class TrevelController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Trevel::find(),
+            'query' => Trevel::find()->orderBy(['id' => SORT_DESC]),
         ]);
 
         return $this->render('index', [

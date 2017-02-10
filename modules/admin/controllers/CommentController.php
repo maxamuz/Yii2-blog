@@ -36,7 +36,7 @@ class CommentController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Comment::find(),
+            'query' => Comment::find()->orderBy(['id' => SORT_DESC]),
         ]);
 
         return $this->render('index', [

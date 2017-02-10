@@ -63,7 +63,7 @@ class SiteController extends Controller
      */
     public function actionIndex()    
     {
-        $query = Trevel::find(); 
+        $query = Trevel::find()->orderBy(['id' => SORT_DESC]); 
         $pages = new \yii\data\Pagination(['totalCount' => $query -> count(), 'pagesize' => 4]);
         $trev = $query -> offset($pages->offset) -> limit($pages->limit)->all();
         return $this->render('index', compact('trev', 'pages')); 
@@ -164,7 +164,7 @@ class SiteController extends Controller
     public function actionView() 
     {   
         $id = \Yii::$app->request->get('id'); 
-        $texts = Trevel::find()->where(['category_id' => $id])->all();
+        $texts = Trevel::find()->orderBy(['id' => SORT_DESC])->where(['category_id' => $id])->all();
         return $this->render('view', compact('texts'));
         
     }
