@@ -93,3 +93,15 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+ .col-md-9 h2 {
+    text-align: center;
+}
+.nav-admin {
+    margin-top: 100px;
+}
+.nav-pills > li.active > a {
+    background-color: #3c763d;
+}
+.grid-container {
+    margin-top: 40px;
+}
